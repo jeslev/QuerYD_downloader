@@ -42,8 +42,11 @@ python download_queryd.py --txt_file relevant-video-links-{version either v1 or 
 To download the .json file containing information about the described videos run:
 ```
 wget http://www.robots.ox.ac.uk/~vgg/research/collaborative-experts/data/QuerYD/json_metadata-{version either v1 or v2}.zip
-mv json_metadata-{version either v1 or v2}.zip json_metadata.zip
+mkdir describe-api-results
+mv json_metadata-{version either v1 or v2}.zip describe-api-results/json_metadata.zip
+cd describe-api-results
 unzip json_metadata.zip
+cd ..
 ```
 
 **Downloading audio description files** \
@@ -64,7 +67,7 @@ python download_queryd.py --txt_file relevant-video-links-{version either v1 or 
 **Downloading transcribed descriptions and corresponding time-stamps**\
 The transcribed version of the audio descriptions can be downloaded as a pickle file by accessing the following link:
 ```
-http://www.robots.ox.ac.uk/~vgg/research/collaborative-experts/data/QuerYD/raw_captions_combined_filtered-{version either v1 or v2}.pkl
+wget http://www.robots.ox.ac.uk/~vgg/research/collaborative-experts/data/QuerYD/raw_captions_combined_filtered-{version either v1 or v2}.pkl
 mv raw_captions_combined_filtered-{version either v1 or v2}.pkl raw_captions_combined_filtered.pkl
 ```
 The corresponding time-stamps in the same order are provided in this pickle file:
